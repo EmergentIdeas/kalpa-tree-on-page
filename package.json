@@ -1,0 +1,37 @@
+{
+  "name": "kalpa-tree-on-page",
+  "version": "1.0.0",
+  "description": "A little code which makes kalpa-tree more friendly as a load-on-demand piece of code",
+  "main": "server-js/initialize-kalpa-tree-resources.js",
+  "browser": "client-js/kalpa-tree-loader.js",
+  "scripts": {
+    "kalpa-js-build": "npx webpack --config kalpa.webpack.js",
+    "kalpa-css-build": "npx sass --no-source-map --load-path=$(node -p 'require(\"scoreboard-colors/__resolve.cjs\")') scss/white-page-tree.scss > public/kalpa-tree-on-page/css/white-page-tree.css",
+    "kalpa-build": "npm run kalpa-js-build; npm run kalpa-css-build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/EmergentIdeas/kalpa-tree-on-page.git"
+  },
+  "bugs": {
+    "url": "https://github.com/EmergentIdeas/kalpa-tree-on-page/issues"
+  },
+  "homepage": "https://github.com/EmergentIdeas/kalpa-tree-on-page#readme",
+
+  "devDependencies": {
+    "kalpa-tree": "^4.1.2",
+    "node-polyfill-webpack-plugin": "^2.0.1",
+    "webpack-cli": "^5.1.4"
+  },
+  "files": [
+    "/public",
+    "/server-js",
+	"/client-js",
+	"README.md"
+  ],
+  "peerDependencies": {
+  }
+}
