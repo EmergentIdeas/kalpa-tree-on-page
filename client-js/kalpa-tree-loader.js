@@ -1,10 +1,12 @@
 
 const Streamish = require('./streamish')
 const serializeTreeNodes = require('./serialize-tree-nodes')
+const serializeANode = require('./serialize-a-node')
 
 const icons = require('./icons')
 
 let loadedStyles = []
+
 
 async function loadKalpaTree(scriptLocation) {
 	return new Promise((resolve, reject) => {
@@ -62,6 +64,12 @@ async function createTree(options = {}) {
 				result.push(tree.root)
 				serializeTreeNodes(this, tree.root.id, result)
 				return result
+			}
+			tree.serialize = function () {
+				var result = []
+				result.push(tree.get(0))
+				serializeANode(tree, 0, result)
+				return JSON.stringify(result)
 			}
 			
 			if(plan.treeContainerSelector) {
