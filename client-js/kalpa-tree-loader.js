@@ -61,14 +61,12 @@ async function createTree(options = {}) {
 			})
 			tree.serializeTree = function() {
 				let result = []
-				result.push(tree.root)
+				result.push(tree.get(tree.root.id))
 				serializeTreeNodes(this, tree.root.id, result)
 				return result
 			}
 			tree.serialize = function () {
-				var result = []
-				result.push(tree.get(0))
-				serializeANode(tree, 0, result)
+				let result = tree.serializeTree()
 				return JSON.stringify(result)
 			}
 			

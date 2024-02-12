@@ -1,6 +1,6 @@
 {
   "name": "kalpa-tree-on-page",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A little code which makes kalpa-tree more friendly as a load-on-demand piece of code",
   "main": "server-js/initialize-kalpa-tree-resources.js",
   "browser": "client-js/kalpa-tree-loader.js",
